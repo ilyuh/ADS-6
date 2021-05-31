@@ -11,22 +11,16 @@ BST<std::string> makeTree(const char *filename)
   char FromAToa = 'a' - 'A';
   std::string Word = "";
   std::ifstream file(filename);
-  if (!file)
-  {
+  if (!file) {
     std::cout << "File error!" << std::endl;
     return TREE;
   }
-  while (!file.eof())
-  {
+  while (!file.eof()) {
     char Char = file.get();
-    if ((Char >= 'a' && Char <= 'z') || (Char >= 'A' && Char <= 'Z'))
-    {
-      if (Char >= 'A' && Char <= 'Z')
-        Char += FromAToa;
+    if ((Char >= 'a' && Char <= 'z') || (Char >= 'A' && Char <= 'Z')) {
+      if (Char >= 'A' && Char <= 'Z') Char += FromAToa;
       Word += Char;
-    }
-    else if (Word != "")
-    {
+    } else if (Word != "") {
       TREE.add(Word);
       Word = "";
     }
