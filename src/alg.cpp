@@ -5,8 +5,7 @@
 #include <cstdlib>
 #include "bst.h"
 
-BST<std::string> makeTree(const char *filename)
-{
+BST<std::string> makeTree(const char *filename) {
   BST<std::string> TREE;
   char FromAToa = 'a' - 'A';
   std::string Word = "";
